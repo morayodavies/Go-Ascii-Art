@@ -14,7 +14,7 @@ func read_file(s string) []string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// replace newlines with space and newline and split on whitespaces
+	// replace newlines with space and random character and split using the random character
 	text := strings.Replace(string(content), "\n", " %", -1)
 	words := strings.FieldsFunc(text, func(r rune) bool { return strings.ContainsRune("%", r) })
 	return words
