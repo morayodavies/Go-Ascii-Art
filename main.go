@@ -20,10 +20,9 @@ func read_file(s string) []string {
 	return words
 }
 
-func ascii_art() {
-
+func ascii_art(s string) {
 	art := read_file("ascii-art")
-	letters := []rune(os.Args[1])
+	letters := []rune(s)
 	for j := 0; j < 8; j++ {
 		for i, letter := range letters {
 			fmt.Print(art[((int(letter)-32)*9)+j])
@@ -38,6 +37,9 @@ func main() {
 	if len(os.Args) != 2 {
 		panic("use one arg")
 	} else {
-		ascii_art()
+		text := strings.Split(os.Args[1], "\\n")
+		for _, word := range text {
+			ascii_art(word)
+		}
 	}
 }
