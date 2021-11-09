@@ -25,7 +25,7 @@ func ascii_art(s string) {
 	letters := []rune(s)
 	for j := 0; j < 8; j++ {
 		for i, letter := range letters {
-			fmt.Print(art[((int(letter)-32)*9)+j])
+			fmt.Print(art[((int(letter)-32)*8)+j])
 			if i == len(letters)-1 {
 				fmt.Print("\n")
 			}
